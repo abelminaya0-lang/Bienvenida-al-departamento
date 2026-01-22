@@ -1,0 +1,8 @@
+{
+  "name": "Olas Home - Las Velas VIP Guide",
+  "description": "A luxury digital concierge for Airbnb guests in Paracas, featuring automated registration, property manuals, local tourism tips, and an AI-powered host assistant.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
