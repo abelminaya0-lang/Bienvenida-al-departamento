@@ -11,7 +11,7 @@ export const Contact: React.FC = () => {
   
   // IA Chat State
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: '¡Hola! Soy tu asistente de Olas Home. ¿En qué puedo ayudarte con tu estadía hoy?' }
+    { role: 'assistant', content: '¡Bienvenido! Soy su Concierge Virtual de Olas Home. ¿En qué puedo asistirle hoy?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +37,7 @@ export const Contact: React.FC = () => {
       const response = await chatWithAI(userMsg, messages);
       setMessages(prev => [...prev, { role: 'assistant', content: response }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'assistant', content: "Lo siento, tuve un problema de conexión. Por favor contacta al host directamente por WhatsApp." }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: "Lo sentimos, el servicio de IA no está disponible temporalmente. Use el botón de WhatsApp para atención inmediata." }]);
     } finally {
       setIsLoading(false);
     }
@@ -52,11 +52,11 @@ export const Contact: React.FC = () => {
     <div className="px-6 pt-8 pb-24">
       <div className="mb-8">
         <h2 className="font-serif text-3xl mb-2 text-[#1B365D]">Contacto & Asistencia</h2>
-        <p className="text-sm text-gray-500">Estamos a su disposición para cualquier requerimiento.</p>
+        <p className="text-sm text-gray-500">Servicio personalizado 24/7 durante su estadía.</p>
       </div>
 
       {/* Concierge Card */}
-      <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center space-y-4 mb-6">
+      <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center space-y-4 mb-8">
         <div className="relative">
           <div className="w-20 h-20 rounded-full border-2 border-[#C2A878] p-1 overflow-hidden">
             <img 
@@ -72,43 +72,44 @@ export const Contact: React.FC = () => {
         
         <div>
           <h3 className="font-serif text-xl font-bold text-[#1B365D]">{HOST_INFO.name}</h3>
-          <p className="text-[10px] text-[#C2A878] font-bold uppercase tracking-widest">Atención Personalizada</p>
+          <p className="text-[10px] text-[#C2A878] font-bold uppercase tracking-widest">Concierge Services</p>
         </div>
         
         <a 
           href={HOST_INFO.whatsapp} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="w-full bg-[#25D366] text-white py-3 rounded-2xl flex items-center justify-center gap-3 shadow-md hover:brightness-105 active:scale-95 transition-all text-sm font-bold uppercase tracking-wide"
+          className="w-full bg-[#25D366] text-white py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg hover:brightness-105 active:scale-95 transition-all text-sm font-bold uppercase tracking-widest"
         >
           <i className="fab fa-whatsapp text-xl"></i>
-          WhatsApp Directo
+          Atención por WhatsApp
         </a>
       </div>
 
-      {/* Integrated AI Assistant Section */}
-      <div className="bg-white rounded-3xl shadow-lg border border-[#C2A878]/20 overflow-hidden mb-8 flex flex-col h-[450px]">
+      {/* Integrated AI Assistant */}
+      <div className="bg-white rounded-3xl shadow-xl border border-[#C2A878]/10 overflow-hidden mb-8 flex flex-col h-[500px]">
+        {/* Header Chat */}
         <div className="bg-[#1B365D] p-4 text-white flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-              <i className="fas fa-robot text-xs text-[#C2A878]"></i>
+            <div className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center">
+              <i className="fas fa-magic text-sm text-[#C2A878]"></i>
             </div>
             <div>
-              <h3 className="text-sm font-bold">Asistente Virtual 24/7</h3>
-              <p className="text-[9px] opacity-60 uppercase tracking-tighter">Responde dudas sobre el departamento</p>
+              <h3 className="text-xs font-bold uppercase tracking-wider">Olas Assistant</h3>
+              <div className="flex items-center gap-1.5 mt-0.5">
+                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                <span className="text-[8px] font-bold uppercase tracking-widest opacity-60">IA Concierge Activa</span>
+              </div>
             </div>
           </div>
-          <div className="flex items-center gap-1.5 pr-2">
-            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
-            <span className="text-[8px] font-bold uppercase tracking-widest opacity-60">En Línea</span>
-          </div>
+          <i className="fas fa-ellipsis-v text-xs opacity-40"></i>
         </div>
         
-        {/* Chat Messages Area */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50/50">
+        {/* Chat Area */}
+        <div className="flex-1 overflow-y-auto p-5 space-y-4 bg-[#FDFBF7]/50">
           {messages.map((msg, i) => (
             <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-3 rounded-2xl text-xs leading-relaxed shadow-sm ${
+              <div className={`max-w-[85%] p-4 rounded-2xl text-[13px] leading-relaxed shadow-sm transition-all animate-in slide-in-from-bottom-2 duration-300 ${
                 msg.role === 'user' 
                   ? 'bg-[#C2A878] text-white rounded-tr-none' 
                   : 'bg-white text-[#1B365D] border border-gray-100 rounded-tl-none'
@@ -119,7 +120,7 @@ export const Contact: React.FC = () => {
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-white border border-gray-100 p-3 rounded-2xl rounded-tl-none flex space-x-1">
+              <div className="bg-white border border-gray-100 p-4 rounded-2xl rounded-tl-none flex space-x-1 shadow-sm">
                 <div className="w-1.5 h-1.5 bg-[#C2A878] rounded-full animate-bounce"></div>
                 <div className="w-1.5 h-1.5 bg-[#C2A878] rounded-full animate-bounce [animation-delay:-0.15s]"></div>
                 <div className="w-1.5 h-1.5 bg-[#C2A878] rounded-full animate-bounce [animation-delay:-0.3s]"></div>
@@ -129,57 +130,60 @@ export const Contact: React.FC = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Area */}
-        <div className="p-3 bg-white border-t border-gray-100 flex gap-2">
+        {/* Input Bar */}
+        <div className="p-4 bg-white border-t border-gray-100 flex gap-2">
           <input 
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
             placeholder="¿Cuál es la clave del WiFi?"
-            className="flex-1 bg-gray-50 border-none rounded-xl px-4 py-2 text-xs focus:ring-1 focus:ring-[#C2A878] outline-none"
+            className="flex-1 bg-gray-50 border-none rounded-xl px-4 py-3 text-xs focus:ring-1 focus:ring-[#C2A878] outline-none"
           />
           <button 
             onClick={handleSend}
             disabled={isLoading || !input.trim()}
-            className="w-10 h-10 bg-[#1B365D] text-white rounded-xl flex items-center justify-center disabled:opacity-30 transition-opacity"
+            className="w-12 h-12 bg-[#1B365D] text-white rounded-xl flex items-center justify-center disabled:opacity-30 transition-all active:scale-90"
           >
-            <i className="fas fa-paper-plane text-xs"></i>
+            <i className="fas fa-paper-plane text-sm"></i>
           </button>
         </div>
       </div>
 
-      {/* Rating Block */}
-      <div className="bg-[#FDFBF7] p-8 rounded-3xl border border-dashed border-[#C2A878]/30 text-center">
-        <h3 className="font-serif text-lg text-[#1B365D] mb-1">¿Cómo va su estadía?</h3>
-        <p className="text-[10px] text-gray-400 mb-6 uppercase tracking-widest font-bold">Feedback VIP</p>
+      {/* Satisfaction Rating */}
+      <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-center">
+        <p className="text-[10px] text-[#C2A878] font-bold uppercase tracking-[0.2em] mb-2">Su opinión nos importa</p>
+        <h3 className="font-serif text-lg text-[#1B365D] mb-6">¿Cómo califica su estadía hasta ahora?</h3>
         
         {!submitted ? (
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex items-center justify-center gap-4">
             {[1, 2, 3, 4, 5].map((star) => (
               <button
                 key={star}
                 type="button"
-                className="text-2xl transition-transform hover:scale-110 active:scale-125"
+                className="text-2xl transition-all hover:scale-125"
                 onClick={() => handleRating(star)}
                 onMouseEnter={() => setHover(star)}
                 onMouseLeave={() => setHover(0)}
               >
-                <i className={`fa-star ${star <= (hover || rating) ? 'fas text-[#C2A878]' : 'far text-gray-300'}`}></i>
+                <i className={`fa-star ${star <= (hover || rating) ? 'fas text-[#C2A878]' : 'far text-gray-200'}`}></i>
               </button>
             ))}
           </div>
         ) : (
-          <div className="py-2 animate-in zoom-in duration-300">
-            <p className="text-xs font-bold text-[#1B365D]">¡Gracias por su calificación!</p>
-            <p className="text-[10px] text-[#C2A878] mt-1">Haremos que su experiencia sea perfecta.</p>
+          <div className="py-2 animate-in fade-in zoom-in duration-500">
+            <div className="w-12 h-12 bg-[#C2A878]/10 text-[#C2A878] rounded-full flex items-center justify-center mx-auto mb-3">
+              <i className="fas fa-check"></i>
+            </div>
+            <p className="text-xs font-bold text-[#1B365D]">¡Gracias por su valoración!</p>
+            <p className="text-[10px] text-gray-400 mt-1">Trabajamos para que su experiencia sea inolvidable.</p>
           </div>
         )}
       </div>
 
-      <div className="mt-12 text-center pb-8">
-        <img src={LOGO_URL} alt="Olas Home Footer" className="w-10 h-10 rounded-full opacity-20 grayscale mx-auto mb-2" />
-        <p className="text-[8px] uppercase tracking-[0.3em] text-gray-400 font-medium">© 2024 Olas Home • Las Velas Paracas</p>
+      <div className="mt-12 text-center pb-8 opacity-40">
+        <img src={LOGO_URL} alt="Olas Home Footer" className="w-8 h-8 rounded-full grayscale mx-auto mb-2" />
+        <p className="text-[8px] uppercase tracking-[0.4em] text-gray-400">© 2024 Olas Home VIP Services</p>
       </div>
     </div>
   );

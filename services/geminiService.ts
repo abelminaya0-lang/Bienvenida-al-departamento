@@ -18,18 +18,16 @@ CONOCIMIENTO BASE:
 8. CONTACTO: El Concierge es "Olas Home Concierge". WhatsApp: +51 923 236 071.
 
 PERSONALIDAD:
-- Elegante, servicial, minimalista y cálido.
-- Responde siempre en español.
-- Sé conciso pero amable.
-- Si te preguntan algo fuera de este manual, redirígelos amablemente al WhatsApp del Host.
+- Elegante, servicial, minimalista y cálido. Responde siempre en español.
+- Sé conciso pero amable. Mantén el tono de "Caribe Peruano".
+- Si te preguntan algo que no conoces, redirígelos amablemente al WhatsApp del Concierge.
 `;
 
 export async function chatWithAI(prompt: string, history: { role: 'user' | 'assistant', content: string }[]) {
-  // Inicializamos la instancia justo antes de la llamada para producción
+  // Inicializamos la instancia dentro de la función para asegurar que tome la última API_KEY de process.env
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
-    // Formateamos el historial para el SDK
     const contents = history.map(msg => ({
       role: msg.role === 'user' ? 'user' : 'model',
       parts: [{ text: msg.content }]
@@ -46,25 +44,23 @@ export async function chatWithAI(prompt: string, history: { role: 'user' | 'assi
       contents: contents,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7,
-        topP: 0.95,
-        topK: 40,
+        temperature: 0.8,
+        topP: 0.9,
       },
     });
 
-    if (!response || !response.text) {
-      throw new Error("No response text from Gemini");
-    }
-
-    return response.text;
+    const text = response.text;
+    if (!text) throw new Error("Empty response");
+    
+    return text;
   } catch (error: any) {
     console.error("Gemini API Error:", error);
     
-    // Si no hay API_KEY configurada en el entorno
-    if (error.message?.includes("API_KEY") || !process.env.API_KEY) {
-      return "Configuración pendiente: La conexión con el asistente virtual aún no se ha completado. Por favor, contacta al host por WhatsApp.";
+    // Manejo amigable de errores para el huésped
+    if (!process.env.API_KEY || error.message?.includes("API_KEY")) {
+      return "Estimado huésped, mi sistema de inteligencia artificial se está configurando. Mientras tanto, por favor contacte a nuestro Concierge directamente por WhatsApp para cualquier duda.";
     }
     
-    return "En este momento tengo una conexión intermitente. Por favor, contacta a nuestro Concierge por WhatsApp para una asistencia inmediata.";
+    return "Lo siento, tuve un pequeño inconveniente técnico. Por favor, escríbame de nuevo o contacte al Concierge por WhatsApp.";
   }
 }
