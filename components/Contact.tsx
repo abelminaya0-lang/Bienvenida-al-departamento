@@ -37,7 +37,7 @@ export const Contact: React.FC = () => {
       const response = await chatWithAI(userMsg, messages);
       setMessages(prev => [...prev, { role: 'assistant', content: response }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'assistant', content: "Lo siento, tuve un problema de conexión. Por favor contacta al host directamente." }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: "Lo siento, tuve un problema de conexión. Por favor contacta al host directamente por WhatsApp." }]);
     } finally {
       setIsLoading(false);
     }
@@ -88,13 +88,19 @@ export const Contact: React.FC = () => {
 
       {/* Integrated AI Assistant Section */}
       <div className="bg-white rounded-3xl shadow-lg border border-[#C2A878]/20 overflow-hidden mb-8 flex flex-col h-[450px]">
-        <div className="bg-[#1B365D] p-4 text-white flex items-center gap-3">
-          <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-            <i className="fas fa-robot text-xs text-[#C2A878]"></i>
+        <div className="bg-[#1B365D] p-4 text-white flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
+              <i className="fas fa-robot text-xs text-[#C2A878]"></i>
+            </div>
+            <div>
+              <h3 className="text-sm font-bold">Asistente Virtual 24/7</h3>
+              <p className="text-[9px] opacity-60 uppercase tracking-tighter">Responde dudas sobre el departamento</p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-sm font-bold">Asistente Virtual 24/7</h3>
-            <p className="text-[9px] opacity-60 uppercase tracking-tighter">Responde dudas sobre el departamento</p>
+          <div className="flex items-center gap-1.5 pr-2">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
+            <span className="text-[8px] font-bold uppercase tracking-widest opacity-60">En Línea</span>
           </div>
         </div>
         
