@@ -16,7 +16,13 @@ Detalles importantes:
 `;
 
 export async function chatWithAI(prompt: string, history: { role: 'user' | 'assistant', content: string }[]) {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Verificación de seguridad para evitar crash si la key falta
+  const apiKey = process.env.API_KEY || "";
+  if (!apiKey) {
+    return "El servicio de IA requiere una configuración de llave API. Por favor, contacte al administrador.";
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
   
   try {
     const response = await ai.models.generateContent({
