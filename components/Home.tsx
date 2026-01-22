@@ -68,17 +68,17 @@ export const Home: React.FC = () => {
               className="w-36 h-36 rounded-full border-4 border-white shadow-2xl mx-auto object-cover"
             />
           </div>
-          <h1 className="font-serif text-5xl font-bold text-[#1B365D] mb-2 drop-shadow-md tracking-tight">Bienvenidos</h1>
+          <h1 className="font-serif text-5xl font-bold text-[#1B365D] mb-2 drop-shadow-md tracking-tight">Bienvenidos a Paracas</h1>
         </div>
       </div>
 
       {/* Welcome Message */}
       <div className="px-6 mt-4 space-y-6 text-center">
         <div className="inline-block px-4 py-1 bg-[#C2A878]/10 rounded-full">
-           <p className="text-[10px] font-bold uppercase tracking-widest text-[#C2A878]">Bienvenido Paracas</p>
+           <p className="text-[10px] font-bold uppercase tracking-widest text-[#C2A878]">Bienvenido a Paracas</p>
         </div>
         
-        <h2 className="font-serif text-3xl text-[#1B365D] leading-tight">Su escapada en el Caribe peruano</h2>
+        <h2 className="font-serif text-3xl text-[#1B365D] leading-tight">Tu escapada al Caribe Peruano</h2>
         <p className="text-sm leading-relaxed text-gray-600 max-w-xs mx-auto">
           Disfrute de la exclusividad de Condominio Las Velas en Nuevo Paracas. Relájese este verano frente a una vista al mar inigualable.
         </p>

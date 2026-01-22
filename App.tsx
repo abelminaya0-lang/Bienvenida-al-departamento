@@ -6,7 +6,6 @@ import { Manual } from './components/Manual';
 import { Location } from './components/Location';
 import { Tourism } from './components/Tourism';
 import { Contact } from './components/Contact';
-import { AIChat } from './components/AIChat';
 import { LOGO_URL } from './constants';
 
 const App: React.FC = () => {
@@ -44,7 +43,7 @@ const App: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto min-h-screen relative flex flex-col bg-[#FDFBF7]">
-      {/* Sticky Top Header - Logo removed per user request */}
+      {/* Sticky Top Header */}
       <header className={`fixed top-0 max-w-md w-full z-50 transition-all duration-300 ${
         scrolled ? 'bg-[#FDFBF7]/90 backdrop-blur-md shadow-sm h-14' : 'bg-transparent h-20'
       } flex items-center justify-between px-6`}>
@@ -90,9 +89,6 @@ const App: React.FC = () => {
           <Contact />
         </section>
       </main>
-
-      {/* AI Assistant FAB */}
-      <AIChat />
 
       {/* Luxury Bottom Navigation */}
       <nav className="fixed bottom-6 left-6 right-6 h-16 bg-[#1B365D] text-white rounded-2xl shadow-2xl flex items-center justify-around px-4 z-40">
