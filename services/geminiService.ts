@@ -16,13 +16,8 @@ Detalles importantes:
 `;
 
 export async function chatWithAI(prompt: string, history: { role: 'user' | 'assistant', content: string }[]) {
-  // Verificación de seguridad para evitar crash si la key falta
-  const apiKey = process.env.API_KEY || "";
-  if (!apiKey) {
-    return "El servicio de IA requiere una configuración de llave API. Por favor, contacte al administrador.";
-  }
-
-  const ai = new GoogleGenAI({ apiKey });
+  // Inicialización directa según las guías del SDK
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
     const response = await ai.models.generateContent({
@@ -37,6 +32,7 @@ export async function chatWithAI(prompt: string, history: { role: 'user' | 'assi
     return response.text || "Lo siento, tuve un problema al procesar tu solicitud. Por favor contacta al host.";
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "Mi conexión está un poco inestable frente al mar. ¿Podrías intentar de nuevo o contactar al host?";
+    // Mensaje más amigable y menos técnico para el usuario final
+    return "En este momento estoy disfrutando de la brisa marina y mi conexión es algo inestable. ¿Podrías intentar de nuevo o contactar a nuestro Concierge por WhatsApp?";
   }
 }
