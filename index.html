@@ -9,10 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Shim seguro para process.env sin sobreescribir valores inyectados -->
+    <!-- Shim para process.env en navegador -->
     <script>
-      window.process = window.process || {};
-      window.process.env = window.process.env || {};
+      window.process = window.process || { env: {} };
     </script>
 
     <style>
@@ -23,7 +22,6 @@
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
-        /* Custom scrollbar for a cleaner look */
         ::-webkit-scrollbar {
             width: 4px;
         }
@@ -51,7 +49,6 @@
 </head>
 <body class="text-[#1B365D]">
     <div id="root"></div>
-    <!-- Punto de entrada principal -->
     <script type="module" src="./index.tsx"></script>
 </body>
 </html>
