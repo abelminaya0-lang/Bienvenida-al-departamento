@@ -51,7 +51,7 @@ export const Manual: React.FC = () => {
                 )}
 
                 <div className="bg-[#FDFBF7] p-4 rounded-xl border border-[#C2A878]/20">
-                  <p className="text-sm text-[#1B365D] leading-relaxed font-medium">
+                  <p className="text-sm text-[#1B365D] leading-relaxed font-medium whitespace-pre-line">
                     {item.details}
                   </p>
                   {item.id === 'wifi' && (

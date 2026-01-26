@@ -24,7 +24,7 @@ export const Contact: React.FC = () => {
         <div className="relative">
           <div className="w-24 h-24 rounded-full border-2 border-[#C2A878] p-1 overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400" 
+              src="https://res.cloudinary.com/drvs81bl0/image/upload/v1769462754/Dise%C3%B1o_sin_t%C3%ADtulo_24_q4zcyl.png" 
               alt="Concierge Olas Home" 
               className="w-full h-full rounded-full object-cover" 
             />

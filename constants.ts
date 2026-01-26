@@ -13,6 +13,13 @@ export const LOGO_URL = "https://res.cloudinary.com/drvs81bl0/image/upload/v1768
 
 export const SERVICES: ServiceItem[] = [
   {
+    id: 'rules',
+    name: 'Reglas de Convivencia',
+    icon: 'fa-clipboard-list',
+    description: 'Normas importantes para una estadía armoniosa.',
+    details: 'Para garantizar la mejor experiencia y el respeto entre vecinos, agradecemos cumplir con las siguientes normas del condominio:\n\n• Piscina: El uso de las piscinas está permitido únicamente hasta las 8:00 PM.\n• Seguridad: Por su seguridad, está estrictamente prohibido ingresar al mar durante la noche.\n• Música y Ruido: El volumen de la música alta está permitido solo hasta las 2:00 AM.\n• Mascotas: Está estrictamente prohibido el ingreso de animales al condominio bajo cualquier circunstancia.'
+  },
+  {
     id: 'wifi',
     name: 'WiFi 5G Alta Velocidad',
     icon: 'fa-wifi',
@@ -61,12 +68,12 @@ export const TOURIST_SPOTS: TouristSpot[] = [
     link: 'https://es.wikipedia.org/wiki/Islas_Ballestas'
   },
   {
-    id: 'mina',
-    name: 'Playa La Mina',
-    description: 'Una de las playas más hermosas del Perú, con aguas tranquilas de color turquesa y arena blanca.',
-    distance: '25 min en auto',
-    imageUrl: 'https://res.cloudinary.com/drvs81bl0/image/upload/v1769052770/Captura_de_pantalla_2026-01-21_223231_ui9wv9.png',
-    link: 'https://www.peru.travel/es/atractivos/reserva-nacional-de-paracas'
+    id: 'yakupark',
+    name: 'Yakupark',
+    description: 'El parque acuático inflable mas grande de Sudamérica, lleno de adrenalina y diversión. Creemos que las personas merecen nuevas formas de diversión, vivir nuevas experiencias, salir de la rutina y recordar su infancia a través de una aventura acuática en Paracas.',
+    distance: '10 min del condominio',
+    imageUrl: 'https://res.cloudinary.com/drvs81bl0/image/upload/v1769463327/full-day-paracas-islas-ballestas-y-yakupark_gqk4cl.webp',
+    link: 'https://yakupark.com/'
   },
   {
     id: 'camellos',
@@ -81,7 +88,7 @@ export const TOURIST_SPOTS: TouristSpot[] = [
 export const HOST_INFO = {
   name: 'Olas Home Concierge',
   whatsapp: 'https://wa.me/51923236071?text=Hola%20Olas%20Home%2C%20estoy%20hospedado%20en%20Las%20Velas%20y%20necesito%20asistencia%20VIP.',
-  emergency: 'Central Las Velas: +51 56 123456',
+  emergency: '+51 923 236 071',
   email: 'stay@olashome.pe'
 };
 
