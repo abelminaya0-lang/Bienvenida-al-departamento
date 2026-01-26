@@ -9,44 +9,17 @@ interface WeatherData {
 }
 
 export const Home: React.FC = () => {
-  const [weather, setWeather] = useState<WeatherData | null>(null);
-  const [loadingWeather, setLoadingWeather] = useState(true);
+  const [weather, setWeather] = useState<WeatherData | null>({
+    temp: 30,
+    condition: 'Cielo Despejado',
+    icon: 'fa-sun text-yellow-400'
+  });
+  const [loadingWeather, setLoadingWeather] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // El clima se mantiene estático como soleado y caluroso por solicitud del usuario
   useEffect(() => {
-    const fetchWeather = async () => {
-      try {
-        const lat = -13.8333;
-        const lon = -76.2667;
-        const response = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
-        );
-        const data = await response.json();
-        const current = data.current_weather;
-
-        const getCondition = (code: number) => {
-          if (code === 0) return { text: 'Cielo despejado', icon: 'fa-sun text-yellow-400' };
-          if (code <= 3) return { text: 'Parcialmente nublado', icon: 'fa-cloud-sun text-gray-300' };
-          if (code >= 45 && code <= 48) return { text: 'Neblina', icon: 'fa-smog text-gray-400' };
-          if (code >= 51 && code <= 67) return { text: 'Llovizna/Lluvia', icon: 'fa-cloud-rain text-blue-400' };
-          return { text: 'Despejado', icon: 'fa-sun text-yellow-400' };
-        };
-
-        const condition = getCondition(current.weathercode);
-
-        setWeather({
-          temp: Math.round(current.temperature),
-          condition: condition.text,
-          icon: condition.icon
-        });
-      } catch (error) {
-        console.error("Error fetching weather:", error);
-      } finally {
-        setLoadingWeather(false);
-      }
-    };
-
-    fetchWeather();
+    setLoadingWeather(false);
   }, []);
 
   // Manejo de reproducción automática con sonido forzado
@@ -201,7 +174,7 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Real-time Weather Section */}
+      {/* Real-time Weather Section - Ahora Estático Soleado */}
       <div className="px-6 mt-10">
         <div className="bg-[#1B365D] text-white p-6 rounded-3xl overflow-hidden relative shadow-xl min-h-[120px] flex flex-col justify-center">
           <div className="relative z-10">
@@ -216,7 +189,7 @@ export const Home: React.FC = () => {
               </div>
             ) : weather ? (
               <div className="flex items-center gap-4 animate-in fade-in duration-500">
-                <i className={`fas ${weather.icon} text-4xl`}></i>
+                <i className={`fas ${weather.icon} text-4xl animate-spin-slow`}></i>
                 <div>
                   <p className="text-2xl font-bold">{weather.temp}°C</p>
                   <p className="text-xs opacity-75">{weather.condition} • Condominio Las Velas</p>
