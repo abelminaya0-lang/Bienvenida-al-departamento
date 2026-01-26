@@ -24,22 +24,22 @@ export const SERVICES: ServiceItem[] = [
     name: 'Jacuzzi Privado',
     icon: 'fa-hot-tub-person',
     description: 'Relájate con vista al mar. Instrucciones de uso seguro.',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     details: 'Por favor, no use aceites. Encienda las burbujas solo cuando el agua cubra los jets.'
   },
   {
     id: 'parking',
-    name: 'Cochera #12',
+    name: 'Cochera #12 (Acceso 24/7)',
     icon: 'fa-car',
-    description: 'Espacio techado disponible 24/7.',
-    details: 'Use el control remoto entregado en check-in. Ingrese por la puerta B.'
+    description: 'Ubicada a espaldas de los departamentos.',
+    details: 'Puede utilizar el estacionamiento todo el tiempo que desee. Tiene total libertad para salir y regresar las veces que necesite, ya sea de madrugada, noche o día. El personal de garita le brindará apoyo constante en la entrada y salida. Es indispensable portar su brazalete al ingresar o salir del condominio.'
   },
   {
     id: 'trash',
     name: 'Gestión de Residuos',
     icon: 'fa-trash-can',
-    description: 'Horarios de recolección y puntos de reciclaje.',
-    details: 'La basura se retira de 8:00 AM a 10:00 AM en la puerta de servicio, ubicada en el primer piso.'
+    description: 'Disposición de basura y limpieza.',
+    details: 'Toda la basura es retirada. Durante la noche, puede bajarla al primer nivel y dejarla en la puerta exterior lateral del condominio. Es obligatorio que toda la basura esté en bolsas bien amarradas antes de retirarse del departamento o del condominio.'
   }
 ];
 
@@ -71,7 +71,7 @@ export const TOURIST_SPOTS: TouristSpot[] = [
   {
     id: 'camellos',
     name: 'Paseo en Camello (Huacachina)',
-    description: 'Una experiencia mágica en el desierto de Ica, cerca del famoso Oasis de Huacachina. Aunque requiere un viaje corto, es ideal para quienes buscan un toque exótico y fotos de ensueño en las dunas.',
+    description: 'Una experiencia mágica en el desierto de Ica, cerca del famoso Oasis de Huacachina. Aunque requiere un viaje corto, es ideal para quienes buscan un toque exótico.',
     distance: '1h 15 min en auto',
     imageUrl: 'https://res.cloudinary.com/drvs81bl0/image/upload/v1769053464/Captura_de_pantalla_2026-01-21_224413_tzdwql.png',
     link: 'https://huacachina.com/es/que-hacer/paseo-en-camello/'

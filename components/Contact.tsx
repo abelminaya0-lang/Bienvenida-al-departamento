@@ -1,47 +1,11 @@
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { HOST_INFO, LOGO_URL } from '../constants';
-import { chatWithAI } from '../services/geminiService';
-import { Message } from '../types';
 
 export const Contact: React.FC = () => {
   const [rating, setRating] = useState<number>(0);
   const [hover, setHover] = useState<number>(0);
   const [submitted, setSubmitted] = useState(false);
-  
-  // IA Chat State
-  const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: '¡Bienvenido! Soy su Concierge Virtual de Olas Home. ¿En qué puedo asistirle hoy?' }
-  ]);
-  const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
-
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return;
-
-    const userMsg = input.trim();
-    setInput('');
-    setMessages(prev => [...prev, { role: 'user', content: userMsg }]);
-    setIsLoading(true);
-
-    try {
-      const response = await chatWithAI(userMsg, messages);
-      setMessages(prev => [...prev, { role: 'assistant', content: response }]);
-    } catch (error) {
-      setMessages(prev => [...prev, { role: 'assistant', content: "Lo sentimos, el servicio de IA no está disponible temporalmente. Use el botón de WhatsApp para atención inmediata." }]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const handleRating = (rate: number) => {
     setRating(rate);
@@ -56,24 +20,28 @@ export const Contact: React.FC = () => {
       </div>
 
       {/* Concierge Card */}
-      <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center space-y-4 mb-8">
+      <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center space-y-6 mb-12">
         <div className="relative">
-          <div className="w-20 h-20 rounded-full border-2 border-[#C2A878] p-1 overflow-hidden">
+          <div className="w-24 h-24 rounded-full border-2 border-[#C2A878] p-1 overflow-hidden">
             <img 
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400" 
               alt="Concierge Olas Home" 
               className="w-full h-full rounded-full object-cover" 
             />
           </div>
-          <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-white rounded-full p-1 shadow-md border border-gray-100">
+          <div className="absolute -bottom-1 -right-1 w-10 h-10 bg-white rounded-full p-1 shadow-md border border-gray-100">
             <img src={LOGO_URL} alt="Olas Home" className="w-full h-full rounded-full object-cover" />
           </div>
         </div>
         
         <div>
-          <h3 className="font-serif text-xl font-bold text-[#1B365D]">{HOST_INFO.name}</h3>
-          <p className="text-[10px] text-[#C2A878] font-bold uppercase tracking-widest">Concierge Services</p>
+          <h3 className="font-serif text-2xl font-bold text-[#1B365D]">{HOST_INFO.name}</h3>
+          <p className="text-[10px] text-[#C2A878] font-bold uppercase tracking-[0.3em] mt-1">Concierge Services</p>
         </div>
+
+        <p className="text-xs text-gray-500 leading-relaxed max-w-[250px]">
+          Estamos aquí para asegurar que su estadía en Las Velas sea perfecta. Contáctenos para cualquier requerimiento especial.
+        </p>
         
         <a 
           href={HOST_INFO.whatsapp} 
@@ -84,69 +52,16 @@ export const Contact: React.FC = () => {
           <i className="fab fa-whatsapp text-xl"></i>
           Atención por WhatsApp
         </a>
-      </div>
 
-      {/* Integrated AI Assistant */}
-      <div className="bg-white rounded-3xl shadow-xl border border-[#C2A878]/10 overflow-hidden mb-8 flex flex-col h-[500px]">
-        {/* Header Chat */}
-        <div className="bg-[#1B365D] p-4 text-white flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center">
-              <i className="fas fa-magic text-sm text-[#C2A878]"></i>
-            </div>
-            <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider">Olas Assistant</h3>
-              <div className="flex items-center gap-1.5 mt-0.5">
-                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-                <span className="text-[8px] font-bold uppercase tracking-widest opacity-60">IA Concierge Activa</span>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 w-full gap-3 pt-4 border-t border-gray-50">
+          <div className="flex items-center justify-center gap-2 text-[10px] text-gray-400 font-medium">
+            <i className="fas fa-envelope text-[#C2A878]"></i>
+            {HOST_INFO.email}
           </div>
-          <i className="fas fa-ellipsis-v text-xs opacity-40"></i>
-        </div>
-        
-        {/* Chat Area */}
-        <div className="flex-1 overflow-y-auto p-5 space-y-4 bg-[#FDFBF7]/50">
-          {messages.map((msg, i) => (
-            <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-4 rounded-2xl text-[13px] leading-relaxed shadow-sm transition-all animate-in slide-in-from-bottom-2 duration-300 ${
-                msg.role === 'user' 
-                  ? 'bg-[#C2A878] text-white rounded-tr-none' 
-                  : 'bg-white text-[#1B365D] border border-gray-100 rounded-tl-none'
-              }`}>
-                {msg.content}
-              </div>
-            </div>
-          ))}
-          {isLoading && (
-            <div className="flex justify-start">
-              <div className="bg-white border border-gray-100 p-4 rounded-2xl rounded-tl-none flex space-x-1 shadow-sm">
-                <div className="w-1.5 h-1.5 bg-[#C2A878] rounded-full animate-bounce"></div>
-                <div className="w-1.5 h-1.5 bg-[#C2A878] rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-                <div className="w-1.5 h-1.5 bg-[#C2A878] rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-              </div>
-            </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
-
-        {/* Input Bar */}
-        <div className="p-4 bg-white border-t border-gray-100 flex gap-2">
-          <input 
-            type="text" 
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-            placeholder="¿Cuál es la clave del WiFi?"
-            className="flex-1 bg-gray-50 border-none rounded-xl px-4 py-3 text-xs focus:ring-1 focus:ring-[#C2A878] outline-none"
-          />
-          <button 
-            onClick={handleSend}
-            disabled={isLoading || !input.trim()}
-            className="w-12 h-12 bg-[#1B365D] text-white rounded-xl flex items-center justify-center disabled:opacity-30 transition-all active:scale-90"
-          >
-            <i className="fas fa-paper-plane text-sm"></i>
-          </button>
+          <div className="flex items-center justify-center gap-2 text-[10px] text-gray-400 font-medium">
+            <i className="fas fa-phone-alt text-[#C2A878]"></i>
+            {HOST_INFO.emergency}
+          </div>
         </div>
       </div>
 

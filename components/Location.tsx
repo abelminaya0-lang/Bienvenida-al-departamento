@@ -11,7 +11,7 @@ export const Location: React.FC = () => {
 
   return (
     <div className="px-6 pt-8 pb-20">
-      <h2 className="font-serif text-3xl mb-2 text-[#1B365D]">Ubicación</h2>
+      <h2 className="font-serif text-3xl mb-2 text-[#1B365D]">Ubicación & Acceso</h2>
       <p className="text-sm text-gray-500 mb-8">Condominio Las Velas, Nuevo Paracas.</p>
 
       {/* Hero Location Image */}
@@ -24,7 +24,7 @@ export const Location: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/60 to-transparent flex items-end p-6">
           <div className="text-white">
             <p className="text-[10px] font-bold uppercase tracking-widest opacity-80 mb-1">Tu destino</p>
-            <p className="text-sm font-serif">Vista real de Condominio Las Velas</p>
+            <p className="text-sm font-serif">Condominio Las Velas</p>
           </div>
         </div>
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-md">
@@ -35,31 +35,31 @@ export const Location: React.FC = () => {
       <div className="space-y-6">
         <div className="flex gap-4">
           <div className="w-10 h-10 bg-[#C2A878]/10 rounded-full flex items-center justify-center text-[#C2A878] shrink-0">
-            <i className="fas fa-map-marker-alt"></i>
+            <i className="fas fa-id-badge"></i>
           </div>
           <div>
-            <h4 className="font-bold text-sm text-[#1B365D]">Dirección Exacta</h4>
-            <p className="text-xs text-gray-500">Km 18.5 Carretera Pisco-Paracas, Condominio Las Velas, Nuevo Paracas.</p>
+            <h4 className="font-bold text-sm text-[#1B365D]">Brazalete Obligatorio</h4>
+            <p className="text-xs text-gray-500">Es indispensable portar su **brazalete** en todo momento al ingresar o salir del condominio y para circular por las áreas comunes.</p>
           </div>
         </div>
 
         <div className="flex gap-4">
           <div className="w-10 h-10 bg-[#C2A878]/10 rounded-full flex items-center justify-center text-[#C2A878] shrink-0">
-            <i className="fas fa-shield-alt"></i>
+            <i className="fas fa-car"></i>
           </div>
           <div>
-            <h4 className="font-bold text-sm text-[#1B365D]">Acceso y Vigilancia</h4>
-            <p className="text-xs text-gray-500">Mencione su nombre y número de departamento en la garita. El registro previo es indispensable para el ingreso de vehículos.</p>
+            <h4 className="font-bold text-sm text-[#1B365D]">Cochera a Espaldas (#12)</h4>
+            <p className="text-xs text-gray-500">Ubicada justo detrás de los departamentos. Disponible 24/7 sin restricción de horario: puede entrar y salir las veces que desee (día, noche o madrugada).</p>
           </div>
         </div>
 
         <div className="flex gap-4">
           <div className="w-10 h-10 bg-[#C2A878]/10 rounded-full flex items-center justify-center text-[#C2A878] shrink-0">
-            <i className="fas fa-parking"></i>
+            <i className="fas fa-user-shield"></i>
           </div>
           <div>
-            <h4 className="font-bold text-sm text-[#1B365D]">Cochera Privada</h4>
-            <p className="text-xs text-gray-500">Estacionamiento asignado para su comodidad durante toda la estancia.</p>
+            <h4 className="font-bold text-sm text-[#1B365D]">Asistencia Permanente</h4>
+            <p className="text-xs text-gray-500">Contará siempre con el apoyo del personal de garita para facilitar su entrada y salida del condominio en cualquier momento.</p>
           </div>
         </div>
 

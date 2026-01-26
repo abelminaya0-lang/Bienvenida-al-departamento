@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { LOGO_URL } from '../constants';
 
 interface WeatherData {
@@ -11,6 +11,7 @@ interface WeatherData {
 export const Home: React.FC = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -48,6 +49,51 @@ export const Home: React.FC = () => {
     fetchWeather();
   }, []);
 
+  // Manejo de reproducción automática con sonido forzado
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Intentar reproducir con sonido inmediatamente
+    video.muted = false;
+    video.volume = 1.0;
+
+    const attemptPlay = async () => {
+      try {
+        await video.play();
+        console.log("Reproducción iniciada con éxito y sonido.");
+      } catch (error) {
+        console.warn("Autoplay con sonido bloqueado por el navegador. Esperando interacción...");
+        // Si falla, reproducimos en silencio para que al menos se vea, 
+        // y lo activaremos con la primera interacción del usuario.
+        video.muted = true;
+        video.play();
+      }
+    };
+
+    attemptPlay();
+
+    // Función para "desbloquear" el audio en el primer clic del usuario en cualquier parte
+    const unlockAudio = () => {
+      if (video) {
+        video.muted = false;
+        video.volume = 1.0;
+        video.play().catch(() => {});
+        // Remover el evento después del primer uso
+        document.removeEventListener('click', unlockAudio);
+        document.removeEventListener('touchstart', unlockAudio);
+      }
+    };
+
+    document.addEventListener('click', unlockAudio);
+    document.addEventListener('touchstart', unlockAudio);
+
+    return () => {
+      document.removeEventListener('click', unlockAudio);
+      document.removeEventListener('touchstart', unlockAudio);
+    };
+  }, []);
+
   return (
     <div className="pb-6">
       {/* Hero Section */}
@@ -72,8 +118,22 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
+      {/* Featured Video Section - Medida original sin cortes */}
+      <div className="px-6 -mt-24 relative z-10 flex justify-center">
+        <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black w-full max-w-[400px]">
+          <video 
+            ref={videoRef}
+            src="https://res.cloudinary.com/drvs81bl0/video/upload/v1769461827/WhatsApp_Video_2026-01-26_at_3.34.25_PM_gpsvel.mp4"
+            className="w-full h-auto block"
+            playsInline
+            controls
+          ></video>
+        </div>
+      </div>
+      <p className="text-[9px] text-center mt-3 text-[#C2A878] font-bold uppercase tracking-[0.2em] opacity-60">Experiencia Las Velas</p>
+
       {/* Welcome Message */}
-      <div className="px-6 mt-4 space-y-6 text-center">
+      <div className="px-6 mt-8 space-y-6 text-center">
         <div className="inline-block px-4 py-1 bg-[#C2A878]/10 rounded-full">
            <p className="text-[10px] font-bold uppercase tracking-widest text-[#C2A878]">Bienvenido a Paracas</p>
         </div>
@@ -120,14 +180,12 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="space-y-4">
-            {/* Status Notice (Non-clickable) */}
             <div className="w-full bg-gray-50 border border-gray-200 text-gray-400 py-3 px-4 rounded-2xl flex items-center gap-3">
               <i className="fas fa-file-excel text-lg"></i>
               <span className="text-xs font-semibold">Documento de Registro (Excel)</span>
               <span className="ml-auto text-[10px] uppercase tracking-tighter">Pendiente</span>
             </div>
             
-            {/* Action Button - WhatsApp with dynamic color effect */}
             <a 
               href="https://wa.me/51923236071?text=Hola%20Olas%20Home%2C%20quisiera%20solicitar%20el%20documento%20Excel%20para%20mi%20registro%20de%20ingreso." 
               target="_blank" 
