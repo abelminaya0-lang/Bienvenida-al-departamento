@@ -54,12 +54,12 @@ export const Manual: React.FC = () => {
                   <p className="text-sm text-[#1B365D] leading-relaxed font-medium whitespace-pre-line">
                     {item.details}
                   </p>
-                  {item.id === 'wifi' && (
+                  {item.id === 'wifi' && item.details?.includes('verano2026') && (
                     <button 
-                      onClick={() => navigator.clipboard.writeText('paracas2024')}
+                      onClick={() => navigator.clipboard.writeText('verano2026')}
                       className="mt-3 text-xs font-bold text-[#C2A878] uppercase tracking-widest flex items-center gap-2 hover:opacity-70"
                     >
-                      <i className="fas fa-copy"></i> Copiar Contraseña
+                      <i className="fas fa-copy"></i> Copiar Clave (502/602)
                     </button>
                   )}
                 </div>

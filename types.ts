@@ -2,6 +2,7 @@
 export enum Tab {
   HOME = 'home',
   MANUAL = 'manual',
+  POOL = 'pool',
   LOCATION = 'location',
   TOURISM = 'tourism',
   CONTACT = 'contact'

@@ -6,7 +6,7 @@ export const Tourism: React.FC = () => {
   const [showCode, setShowCode] = useState(false);
   
   // Enlace de WhatsApp con el código incluido para la redención
-  const DISCOUNT_WHATSAPP = `https://wa.me/51923236071?text=Hola%20Olas%20Home%2C%20tengo%20el%20c%C3%B3digo%20de%20descuento%20olas26%20para%20mi%20pr%C3%B3xima%20estad%C3%ADa.`;
+  const DISCOUNT_WHATSAPP = `https://wa.me/51996012246?text=Hola%20Olas%20Home%2C%20tengo%20el%20c%C3%B3digo%20de%20descuento%20olas26%20para%20mi%20pr%C3%B3xima%20estad%C3%ADa.`;
 
   return (
     <div className="px-6 pt-8 pb-20">

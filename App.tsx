@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Tab } from './types';
 import { Home } from './components/Home';
 import { Manual } from './components/Manual';
+import { PoolSection } from './components/PoolSection';
 import { Location } from './components/Location';
 import { Tourism } from './components/Tourism';
 import { Contact } from './components/Contact';
@@ -73,6 +74,12 @@ const App: React.FC = () => {
 
         <div className="h-px w-full bg-gradient-to-r from-transparent via-[#C2A878]/30 to-transparent my-4"></div>
 
+        <section id={Tab.POOL}>
+          <PoolSection />
+        </section>
+
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-[#C2A878]/30 to-transparent my-4"></div>
+
         <section id={Tab.LOCATION}>
           <Location />
         </section>
@@ -105,8 +112,14 @@ const App: React.FC = () => {
           onClick={() => scrollToSection(Tab.MANUAL)} 
         />
         <NavItem 
+          icon="fa-swimmer" 
+          label="Piscina"
+          active={activeTab === Tab.POOL} 
+          onClick={() => scrollToSection(Tab.POOL)} 
+        />
+        <NavItem 
           icon="fa-map-location-dot" 
-          label="Ubicación"
+          label="Mapa"
           active={activeTab === Tab.LOCATION} 
           onClick={() => scrollToSection(Tab.LOCATION)} 
         />

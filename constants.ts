@@ -17,14 +17,21 @@ export const SERVICES: ServiceItem[] = [
     name: 'Reglas de Convivencia',
     icon: 'fa-clipboard-list',
     description: 'Normas importantes para una estadía armoniosa.',
-    details: 'Para garantizar la mejor experiencia y el respeto entre vecinos, agradecemos cumplir con las siguientes normas del condominio:\n\n• Piscina: El uso de las piscinas está permitido únicamente hasta las 8:00 PM.\n• Seguridad: Por su seguridad, está estrictamente prohibido ingresar al mar durante la noche.\n• Música y Ruido: El volumen de la música alta está permitido solo hasta las 2:00 AM.\n• Mascotas: Está estrictamente prohibido el ingreso de animales al condominio bajo cualquier circunstancia.'
+    details: 'Para garantizar la mejor experiencia y el respeto entre vecinos, agradecemos cumplir con las siguientes normas del condominio:\n\n• Piscina: El uso de las piscinas está permitido únicamente hasta las 8:00 PM.\n• Seguridad: Por su seguridad, está estrictamente prohibido ingresar al mar durante la noche.\n• Ruidos Internos: Dentro del departamento, se debe mantener el silencio y evitar ruidos molestos a partir de las 12:00 AM.\n• Música y Eventos: El volumen de música en áreas comunes o general está permitido solo hasta las 2:00 AM.\n• Mascotas: Está estrictamente prohibido el ingreso de animales al condominio bajo cualquier circunstancia.'
   },
   {
     id: 'wifi',
-    name: 'WiFi 5G Alta Velocidad',
+    name: 'WiFi Alta Velocidad',
     icon: 'fa-wifi',
-    description: 'Conexión estable para trabajo o streaming.',
-    details: 'Red: OlasHome_Velas | Clave: paracas2024'
+    description: 'Conexión estable para su estadía.',
+    details: 'Departamentos 502 y 602 (Torre 5):\nRed: OlasHome_Velas | Clave: verano2026\n\nOtros Departamentos:\nSe le hará entrega de un dispositivo de WiFi móvil personalizado al momento de su ingreso al departamento.'
+  },
+  {
+    id: 'store',
+    name: 'Tienda & Market (Delivery)',
+    icon: 'fa-shopping-basket',
+    description: 'Ubicada dentro del condominio. Pedidos al departamento.',
+    details: 'La tienda del condominio cuenta con productos básicos, snacks y bebidas. Puede acercarse personalmente o solicitar delivery directamente a su departamento para su comodidad.'
   },
   {
     id: 'jacuzzi',
@@ -87,9 +94,14 @@ export const TOURIST_SPOTS: TouristSpot[] = [
 
 export const HOST_INFO = {
   name: 'Olas Home Concierge',
-  whatsapp: 'https://wa.me/51923236071?text=Hola%20Olas%20Home%2C%20estoy%20hospedado%20en%20Las%20Velas%20y%20necesito%20asistencia%20VIP.',
-  emergency: '+51 923 236 071',
+  whatsapp: 'https://wa.me/51996012246?text=Hola%20Olas%20Home%2C%20estoy%20hospedado%20en%20Las%20Velas%20y%20necesito%20asistencia%20VIP.',
+  emergency: '+51 996 012 246',
   email: 'stay@olashome.pe'
+};
+
+export const STORE_INFO = {
+  phone: '+51 900 000 000', // Reemplazar con el número real de la tienda
+  whatsapp: 'https://wa.me/51900000000?text=Hola%2C%20quisiera%20hacer%20un%20pedido%20a%20la%20tienda%20del%20Condominio%20Las%20Velas.'
 };
 
 export const REGISTRATION_LINK = "https://docs.google.com/spreadsheets/d/your-id-here";
