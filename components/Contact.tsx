@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { HOST_INFO, LOGO_URL } from '../constants';
+import { HOST_INFO, LOGO_URL, EXTENSION_INFO } from '../constants';
 
 export const Contact: React.FC = () => {
   const [rating, setRating] = useState<number>(0);
@@ -13,7 +13,7 @@ export const Contact: React.FC = () => {
     setSubmitted(true);
   };
 
-  const EXTENSION_WHATSAPP = `https://wa.me/51996012246?text=Hola%20Olas%20Home%2C%20estoy%20disfrutando%20mucho%20mi%20estad%C3%ADa%20en%20Las%20Velas%20y%20me%20gustar%C3%ADa%20consultar%20la%20tarifa%20especial%20para%20quedarme%20una%20noche%20m%C3%A1s.`;
+  const EXTENSION_WHATSAPP = `https://wa.me/${EXTENSION_INFO.number}?text=${encodeURIComponent(EXTENSION_INFO.message)}`;
 
   return (
     <div className="px-6 pt-8 pb-24">
@@ -68,7 +68,7 @@ export const Contact: React.FC = () => {
         </div>
       </div>
 
-      {/* 🌟 Bloque Estratégico: Extender Estadía (One More Night) */}
+      {/* 🌟 Bloque Estratégico: Paracas te atrapa (One More Night) */}
       <div className="mb-8 relative group">
         <div className="absolute inset-0 bg-gradient-to-r from-[#C2A878]/20 to-[#1B365D]/10 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
         <div 

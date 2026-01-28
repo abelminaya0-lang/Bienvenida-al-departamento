@@ -99,8 +99,13 @@ export const HOST_INFO = {
   email: 'stay@olashome.pe'
 };
 
+export const EXTENSION_INFO = {
+  number: '51996012246',
+  message: 'Hola Olas Home, estoy disfrutando mucho mi estadía en Las Velas y me gustaría consultar la tarifa especial para quedarme una noche más.'
+};
+
 export const STORE_INFO = {
-  phone: '+51 900 000 000', // Reemplazar con el número real de la tienda
+  phone: '+51 900 000 000',
   whatsapp: 'https://wa.me/51900000000?text=Hola%2C%20quisiera%20hacer%20un%20pedido%20a%20la%20tienda%20del%20Condominio%20Las%20Velas.'
 };
 
