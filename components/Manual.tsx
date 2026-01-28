@@ -6,6 +6,11 @@ import { ServiceItem } from '../types';
 export const Manual: React.FC = () => {
   const [selected, setSelected] = useState<ServiceItem | null>(null);
 
+  // Imágenes de referencia específicas para el manual
+  const SERVICE_IMAGES: Record<string, string> = {
+    trash: "https://res.cloudinary.com/drvs81bl0/image/upload/v1769624226/0cc37281-8559-4a54-bd86-1d288b7370ed_rnkanj.jpg"
+  };
+
   return (
     <div className="px-6 pt-8 pb-20">
       <h2 className="font-serif text-3xl mb-2 text-[#1B365D]">Manual del departamento</h2>
@@ -38,7 +43,7 @@ export const Manual: React.FC = () => {
                 <div className="h-px bg-gray-100 mb-4"></div>
                 
                 {item.videoUrl && (
-                  <div className="mb-4 rounded-xl overflow-hidden aspect-video bg-black shadow-inner">
+                  <div className="mb-4 rounded-xl overflow-hidden aspect-video bg-black shadow-inner border border-gray-100">
                     <iframe 
                       className="w-full h-full"
                       src={item.videoUrl} 
@@ -50,7 +55,7 @@ export const Manual: React.FC = () => {
                   </div>
                 )}
 
-                <div className="bg-[#FDFBF7] p-4 rounded-xl border border-[#C2A878]/20">
+                <div className="bg-[#FDFBF7] p-4 rounded-xl border border-[#C2A878]/20 mb-4">
                   <p className="text-sm text-[#1B365D] leading-relaxed font-medium whitespace-pre-line">
                     {item.details}
                   </p>
@@ -63,6 +68,18 @@ export const Manual: React.FC = () => {
                     </button>
                   )}
                 </div>
+
+                {/* Imagen de referencia si existe */}
+                {SERVICE_IMAGES[item.id] && (
+                  <div className="mt-2 rounded-2xl overflow-hidden border-2 border-white shadow-md">
+                    <p className="text-[10px] uppercase tracking-widest text-[#C2A878] font-bold mb-2 ml-1">Referencia Visual:</p>
+                    <img 
+                      src={SERVICE_IMAGES[item.id]} 
+                      alt={`Referencia ${item.name}`} 
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                )}
               </div>
             )}
           </div>
