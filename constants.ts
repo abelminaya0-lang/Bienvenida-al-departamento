@@ -100,7 +100,7 @@ export const HOST_INFO = {
 };
 
 export const EXTENSION_INFO = {
-  number: '51996012246',
+  number: '51923236071',
   message: 'Hola Olas Home, estoy disfrutando mucho mi estadía en Las Velas y me gustaría consultar la tarifa especial para quedarme una noche más.'
 };
 
