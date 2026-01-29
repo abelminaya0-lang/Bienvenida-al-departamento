@@ -105,8 +105,8 @@ export const EXTENSION_INFO = {
 };
 
 export const STORE_INFO = {
-  phone: '+51 900 000 000',
-  whatsapp: 'https://wa.me/51900000000?text=Hola%2C%20quisiera%20hacer%20un%20pedido%20a%20la%20tienda%20del%20Condominio%20Las%20Velas.'
+  phone: '+51 996 012 246',
+  whatsapp: 'https://wa.me/51996012246?text=Hola%2C%20quisiera%20hacer%20un%20pedido%20a%20la%20tienda%20del%20Condominio%20Las%20Velas.'
 };
 
 export const REGISTRATION_LINK = "https://docs.google.com/spreadsheets/d/your-id-here";

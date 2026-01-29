@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { SERVICES } from '../constants';
+import { SERVICES, STORE_INFO } from '../constants';
 import { ServiceItem } from '../types';
 
 export const Manual: React.FC = () => {
@@ -59,6 +59,8 @@ export const Manual: React.FC = () => {
                   <p className="text-sm text-[#1B365D] leading-relaxed font-medium whitespace-pre-line">
                     {item.details}
                   </p>
+                  
+                  {/* Botón específico para WiFi */}
                   {item.id === 'wifi' && item.details?.includes('verano2026') && (
                     <button 
                       onClick={() => navigator.clipboard.writeText('verano2026')}
@@ -66,6 +68,19 @@ export const Manual: React.FC = () => {
                     >
                       <i className="fas fa-copy"></i> Copiar Clave (502/602)
                     </button>
+                  )}
+
+                  {/* Botón específico para Tienda/Market */}
+                  {item.id === 'store' && (
+                    <a 
+                      href={STORE_INFO.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 w-full bg-[#25D366] text-white py-3 rounded-xl font-bold text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 shadow-md hover:brightness-105 active:scale-95 transition-all"
+                    >
+                      <i className="fab fa-whatsapp text-sm"></i>
+                      Hacer pedido por WhatsApp
+                    </a>
                   )}
                 </div>
 
