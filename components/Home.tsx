@@ -93,7 +93,7 @@ export const Home: React.FC = () => {
         <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-black w-full max-w-[400px]">
           <video 
             ref={videoRef}
-            src="https://res.cloudinary.com/drvs81bl0/video/upload/v1769461827/WhatsApp_Video_2026-01-26_at_3.34.25_PM_gpsvel.mp4"
+            src="https://res.cloudinary.com/dpz7tjqwn/video/upload/v1772037113/WhatsApp_Video_2026-01-26_at_3.34.25_PM_jgpecm.mp4"
             className="w-full h-auto block"
             playsInline
             controls

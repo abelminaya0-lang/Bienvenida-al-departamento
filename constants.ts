@@ -9,7 +9,7 @@ export const COLORS = {
   urgent: '#E63946'
 };
 
-export const LOGO_URL = "https://res.cloudinary.com/drvs81bl0/image/upload/v1768496831/c7c65ce8-7e4e-4915-b240-b45698249057_j1m62p.jpg";
+export const LOGO_URL = "https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772037187/Black_White_Letter_MD_Logo_Instagram_Post_1_hymb0t.png";
 
 export const SERVICES: ServiceItem[] = [
   {
@@ -63,7 +63,7 @@ export const TOURIST_SPOTS: TouristSpot[] = [
     name: 'Reserva Nacional de Paracas',
     description: 'Un desierto que se encuentra con el mar. Paisajes de Marte en la Tierra, incluyendo la famosa Playa Roja.',
     distance: '15 min en auto',
-    imageUrl: 'https://res.cloudinary.com/drvs81bl0/image/upload/v1769052654/Captura_de_pantalla_2026-01-21_223039_gr1wqe.png',
+    imageUrl: 'https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772038652/imgi_30_DSCN0383-2.jpg-Servicios-al-visitante_cfc1kx.jpg',
     link: 'https://www.ytuqueplanes.com/destinos/ica/pisco/reserva-nacional-de-paracas'
   },
   {
@@ -71,7 +71,7 @@ export const TOURIST_SPOTS: TouristSpot[] = [
     name: 'Islas Ballestas',
     description: 'Navega para ver lobos marinos, pingüinos de Humboldt y el misterioso geoglifo El Candelabro.',
     distance: '5 min al puerto',
-    imageUrl: 'https://res.cloudinary.com/drvs81bl0/image/upload/v1769052704/Captura_de_pantalla_2026-01-21_223132_wljnnp.png',
+    imageUrl: 'https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772038889/Islas-Ballestas-Waman-Adventures-5_mhs6yl.webp',
     link: 'https://es.wikipedia.org/wiki/Islas_Ballestas'
   },
   {
@@ -79,7 +79,7 @@ export const TOURIST_SPOTS: TouristSpot[] = [
     name: 'Yakupark',
     description: 'El parque acuático inflable mas grande de Sudamérica, lleno de adrenalina y diversión. Creemos que las personas merecen nuevas formas de diversión, vivir nuevas experiencias, salir de la rutina y recordar su infancia a través de una aventura acuática en Paracas.',
     distance: '10 min del condominio',
-    imageUrl: 'https://res.cloudinary.com/drvs81bl0/image/upload/v1769463327/full-day-paracas-islas-ballestas-y-yakupark_gqk4cl.webp',
+    imageUrl: 'https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772038584/full-day-paracas-islas-ballestas-y-yakupark_y89inl.webp',
     link: 'https://yakupark.com/'
   },
   {
@@ -87,7 +87,7 @@ export const TOURIST_SPOTS: TouristSpot[] = [
     name: 'Paseo en Camello (Huacachina)',
     description: 'Una experiencia mágica en el desierto de Ica, cerca del famoso Oasis de Huacachina. Aunque requiere un viaje corto, es ideal para quienes buscan un toque exótico.',
     distance: '1h 15 min en auto',
-    imageUrl: 'https://res.cloudinary.com/drvs81bl0/image/upload/v1769053464/Captura_de_pantalla_2026-01-21_224413_tzdwql.png',
+    imageUrl: 'https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772038966/imgi_7_unforgettable-desert-experience-in-ica-tour-iziperu_e9fhxv.jpg',
     link: 'https://huacachina.com/es/que-hacer/paseo-en-camello/'
   }
 ];

@@ -49,6 +49,11 @@ const App: React.FC = () => {
         scrolled ? 'bg-[#FDFBF7]/90 backdrop-blur-md shadow-sm h-14' : 'bg-transparent h-20'
       } flex items-center justify-between px-6`}>
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection(Tab.HOME)}>
+          <img 
+            src={LOGO_URL} 
+            alt="Olas Home Logo" 
+            className={`transition-all duration-300 rounded-full border border-[#C2A878]/30 ${scrolled ? 'w-8 h-8' : 'w-12 h-12 opacity-0'}`}
+          />
           <span className={`font-serif font-bold text-[#1B365D] transition-all duration-300 ${scrolled ? 'text-sm' : 'text-lg opacity-0'}`}>
             Olas Home
           </span>

@@ -3,10 +3,9 @@ import React, { useState, useEffect } from 'react';
 
 export const PoolSection: React.FC = () => {
   const poolImages = [
-    "https://res.cloudinary.com/drvs81bl0/image/upload/v1769530617/maxresdefault_w5ynsq.jpg",
-    "https://res.cloudinary.com/drvs81bl0/image/upload/v1769530617/7ba7b5c7-1f6f-49fe-ab9f-8218d7c2ab73_pqsaqa.jpg",
-    "https://res.cloudinary.com/drvs81bl0/image/upload/v1769530616/584586444_m7avll.jpg",
-    "https://res.cloudinary.com/drvs81bl0/image/upload/v1769530617/f0b34239-f765-43a2-a9f8-ac1d08b5a2fa_jpclpt.jpg"
+    "https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772037991/maxresdefault_ltekjm.jpg",
+    "https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772037990/584586444_dfbcdq.jpg",
+    "https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772037990/7ba7b5c7-1f6f-49fe-ab9f-8218d7c2ab73_hvberl.jpg"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

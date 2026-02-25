@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Location: React.FC = () => {
   const MAP_LINK = "https://maps.app.goo.gl/54LDXoWxQDHCKa329";
-  const LOCATION_IMAGE = "https://res.cloudinary.com/drvs81bl0/image/upload/v1769052314/Captura_de_pantalla_2026-01-21_222454_vwjuq3.png";
+  const LOCATION_IMAGE = "https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772038257/Captura_de_pantalla_2026-02-24_095544_qkxoks.png";
   
   const handleOpenMaps = () => {
     window.open(MAP_LINK, '_blank');
