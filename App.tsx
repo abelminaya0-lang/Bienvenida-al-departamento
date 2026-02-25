@@ -60,7 +60,7 @@ const App: React.FC = () => {
         </div>
         {scrolled && (
           <div className="text-[10px] uppercase tracking-widest font-bold text-[#C2A878] animate-in fade-in slide-in-from-right-2">
-            Las Velas
+            Paracas - Perú
           </div>
         )}
       </header>

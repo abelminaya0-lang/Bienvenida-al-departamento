@@ -12,19 +12,19 @@ export const Location: React.FC = () => {
   return (
     <div className="px-6 pt-8 pb-20">
       <h2 className="font-serif text-3xl mb-2 text-[#1B365D]">Ubicación & Acceso</h2>
-      <p className="text-sm text-gray-500 mb-8">Condominio Las Velas, Nuevo Paracas.</p>
+      <p className="text-sm text-gray-500 mb-8">Condominio Paracas - Perú, Nuevo Paracas.</p>
 
       {/* Hero Location Image */}
       <div className="rounded-3xl overflow-hidden shadow-lg border-4 border-white mb-8 relative group cursor-pointer" onClick={handleOpenMaps}>
         <img 
           src={LOCATION_IMAGE} 
-          alt="Vista Condominio Las Velas" 
+          alt="Vista Condominio Paracas - Perú" 
           className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1B365D]/60 to-transparent flex items-end p-6">
           <div className="text-white">
             <p className="text-[10px] font-bold uppercase tracking-widest opacity-80 mb-1">Tu destino</p>
-            <p className="text-sm font-serif">Condominio Las Velas</p>
+            <p className="text-sm font-serif">Condominio Paracas - Perú</p>
           </div>
         </div>
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-md">

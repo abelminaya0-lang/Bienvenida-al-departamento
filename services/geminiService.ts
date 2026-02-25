@@ -2,7 +2,7 @@
 import { GoogleGenAI } from "@google/genai";
 
 const SYSTEM_INSTRUCTION = `
-Eres el Concierge VIP de "Olas Home - Las Velas" en Paracas. Tu misión es dar asistencia de lujo a los huéspedes.
+Eres el Concierge VIP de "Olas Home - Paracas - Perú" en Paracas. Tu misión es dar asistencia de lujo a los huéspedes.
 CONOCIMIENTO BASE:
 1. WIFI: 
    - Dptos 502 y 602 (Torre 5): Red "OlasHome_Velas", Clave "verano2026".

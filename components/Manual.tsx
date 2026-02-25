@@ -8,7 +8,7 @@ export const Manual: React.FC = () => {
 
   // Imágenes de referencia específicas para el manual
   const SERVICE_IMAGES: Record<string, string> = {
-    trash: "https://res.cloudinary.com/drvs81bl0/image/upload/v1769624226/0cc37281-8559-4a54-bd86-1d288b7370ed_rnkanj.jpg"
+    trash: "https://res.cloudinary.com/dpz7tjqwn/image/upload/v1772040390/0cc37281-8559-4a54-bd86-1d288b7370ed_eeig8f.jpg"
   };
 
   return (

@@ -94,19 +94,19 @@ export const TOURIST_SPOTS: TouristSpot[] = [
 
 export const HOST_INFO = {
   name: 'Olas Home Concierge',
-  whatsapp: 'https://wa.me/51996012246?text=Hola%20Olas%20Home%2C%20estoy%20hospedado%20en%20Las%20Velas%20y%20necesito%20asistencia%20VIP.',
+  whatsapp: 'https://wa.me/51996012246?text=Hola%20Olas%20Home%2C%20estoy%20hospedado%20en%20Paracas%20-%20Per%C3%BA%20y%20necesito%20asistencia%20VIP.',
   emergency: '+51 996 012 246',
   email: 'stay@olashome.pe'
 };
 
 export const EXTENSION_INFO = {
   number: '51923236071',
-  message: 'Hola Olas Home, estoy disfrutando mucho mi estadía en Las Velas y me gustaría consultar la tarifa especial para quedarme una noche más.'
+  message: 'Hola Olas Home, estoy disfrutando mucho mi estadía en Paracas - Perú y me gustaría consultar la tarifa especial para quedarme una noche más.'
 };
 
 export const STORE_INFO = {
   phone: '+51 996 012 246',
-  whatsapp: 'https://wa.me/51996012246?text=Hola%2C%20quisiera%20hacer%20un%20pedido%20a%20la%20tienda%20del%20Condominio%20Las%20Velas.'
+  whatsapp: 'https://wa.me/51996012246?text=Hola%2C%20quisiera%20hacer%20un%20pedido%20a%20la%20tienda%20del%20Condominio%20Paracas%20-%20Per%C3%BA.'
 };
 
 export const REGISTRATION_LINK = "https://docs.google.com/spreadsheets/d/your-id-here";

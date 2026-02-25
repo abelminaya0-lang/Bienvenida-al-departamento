@@ -100,7 +100,7 @@ export const Home: React.FC = () => {
           ></video>
         </div>
       </div>
-      <p className="text-[9px] text-center mt-3 text-[#C2A878] font-bold uppercase tracking-[0.2em] opacity-60">Experiencia Las Velas</p>
+      <p className="text-[9px] text-center mt-3 text-[#C2A878] font-bold uppercase tracking-[0.2em] opacity-60">Experiencia Paracas - Perú</p>
 
       {/* CONTENIDO PRINCIPAL - EL REGISTRO VA PRIMERO */}
       <div className="px-6 mt-8 space-y-8">
@@ -150,7 +150,7 @@ export const Home: React.FC = () => {
           
           <h2 className="font-serif text-3xl text-[#1B365D] leading-tight">Tu escapada al Caribe Peruano</h2>
           <p className="text-sm leading-relaxed text-gray-600 max-w-xs mx-auto">
-            Disfrute de la exclusividad de Condominio Las Velas en Nuevo Paracas. Relájese este verano frente a una vista al mar inigualable.
+            Disfrute de la exclusividad de Condominio Paracas - Perú en Nuevo Paracas. Relájese este verano frente a una vista al mar inigualable.
           </p>
           
           <div className="grid grid-cols-2 gap-4 mt-4">
@@ -216,7 +216,7 @@ export const Home: React.FC = () => {
                   <i className={`fas ${weather.icon} text-4xl animate-spin-slow`}></i>
                   <div>
                     <p className="text-2xl font-bold">{weather.temp}°C</p>
-                    <p className="text-xs opacity-75">{weather.condition} • Condominio Las Velas</p>
+                    <p className="text-xs opacity-75">{weather.condition} • Condominio Paracas - Perú</p>
                   </div>
                 </div>
               ) : (

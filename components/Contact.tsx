@@ -43,7 +43,7 @@ export const Contact: React.FC = () => {
         </div>
 
         <p className="text-xs text-gray-500 leading-relaxed max-w-[250px]">
-          Estamos aquí para asegurar que su estadía en Las Velas sea perfecta. Contáctenos para cualquier requerimiento especial.
+          Estamos aquí para asegurar que su estadía en Paracas - Perú sea perfecta. Contáctenos para cualquier requerimiento especial.
         </p>
         
         <a 
